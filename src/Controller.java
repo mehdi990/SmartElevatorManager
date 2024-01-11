@@ -2,7 +2,9 @@ public class Controller {
 
     public static void main(String[] args) {
 
-        Elevator elevator1 = new Elevator(4);
+        ElevatorHardware hardware = new SpecificElevatorHardware();
+        Elevator elevator1 = new Elevator(4,hardware);
+
 
         elevator1.goUp();
         elevator1.goDown();
@@ -13,7 +15,7 @@ public class Controller {
 
 
 
-        Elevator elevator2 = new Elevator();
+        Elevator elevator2 = new Elevator(hardware);
 
         elevator2.goUp();
         elevator2.goDown();

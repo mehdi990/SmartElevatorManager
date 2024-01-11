@@ -12,16 +12,20 @@ class Elevator {
 
     private List<Integer> requests;
 
+
+    private ElevatorHardware hardware;
+
+
     // Constructor to initialize the elevator at a specific floor
-    public Elevator(int currentFloor ) {
+    public Elevator(int currentFloor, ElevatorHardware hardware ) {
         this.currentFloor = currentFloor;
+        this.hardware=hardware;
         this.requests = new ArrayList<>();
     }
 
     // Default constructor initializes the elevator at ground floor
-    public Elevator() {
-        this.currentFloor = 0;
-        this.requests = new ArrayList<>();
+    public Elevator(ElevatorHardware hardware) {
+        this(0,hardware);
     }
 
     // Method to move the elevator up by one floor
